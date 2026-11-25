@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ea580c">
+<title>Pièces Auto Kouassi - Adjamé | Pièces Vérifiées</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{--orange:#ea580c;--yellow:#fbbf24;--dark:#1f2937;--light:#f8fafc;--white:#fff;--text:#273244;--muted:#64748b;--border:#e5e7eb;--green:#16a34a;--shadow:0 8px 25px rgba(0,0,0,.08)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:var(--light);color:var(--text);line-height:1.7}
+button,input,select{font:inherit}button{cursor:pointer}a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+.container{width:min(1180px,92%);margin:auto}
+.topbar{background:var(--dark);color:#fff;padding:8px 0;font-size:12px}.topbar .container{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+header{position:sticky;top:0;z-index:100;background:var(--white);box-shadow:var(--shadow)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:13px 0}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:19px;color:var(--orange)}
+.logo-icon{width:43px;height:43px;background:var(--orange);color:#fff;border-radius:12px;display:grid;place-items:center;font-size:21px}
+.logo small{display:block;font-size:10px;color:var(--muted);font-weight:600}
+nav{display:flex;gap:5px;flex-wrap:wrap}nav button,.header-actions button{border:0;background:transparent;color:var(--text);padding:9px 10px;border-radius:9px;font-size:12px;font-weight:600}
+nav button:hover{background:#fff0e7;color:var(--orange)}
+.cart-count{position:absolute;top:0;right:0;background:var(--orange);color:#fff;font-size:10px;border-radius:20px;padding:1px 5px}.icon-btn{position:relative}
+.mobile-nav{display:none}
+.btn{border:0;border-radius:10px;padding:12px 17px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:13px}
+.btn-primary{background:var(--orange);color:#fff}.btn-green{background:#16a34a;color:#fff}.btn-yellow{background:var(--yellow);color:#292524}.btn-outline{border:1px solid var(--orange);color:var(--orange);background:transparent}.btn-small{padding:8px 11px;font-size:11px}
+.hero{background:linear-gradient(110deg,rgba(17,24,39,.96),rgba(17,24,39,.78)),url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1500&q=85') center/cover;color:#fff;padding:85px 0}
+.hero h1{font-size:clamp(32px,5vw,57px);line-height:1.18;font-weight:900;margin-bottom:20px}.hero p{color:#e5e7eb;max-width:600px;margin-bottom:25px}
+.hero-buttons{display:flex;gap:10px;flex-wrap:wrap}.hero-note{margin-top:25px;color:#fde68a;font-size:12px}.eyebrow{color:var(--yellow);font-weight:700;font-size:13px;margin-bottom:15px}
+.section{padding:65px 0}.section-sm{padding:38px 0}.section-title{text-align:center;margin-bottom:32px}.section-title span{color:var(--orange);font-weight:700;font-size:12px;text-transform:uppercase}.section-title h2{font-size:clamp(24px,4vw,34px);font-weight:900;margin-top:5px}
+.grid{display:grid;gap:18px}.grid-2{grid-template-columns:repeat(2,1fr)}.grid-3{grid-template-columns:repeat(3,1fr)}.grid-4{grid-template-columns:repeat(4,1fr)}
+.benefit,.category-card,.product-card,.review-card,.info-card{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+.benefit{padding:23px;text-align:center}.benefit i{font-size:28px;color:var(--orange);margin-bottom:10px}.benefit h3{font-size:15px}.benefit p{font-size:12px;color:var(--muted);margin-top:5px}
+.category-card{padding:23px;text-align:center;cursor:pointer}.category-card i{font-size:30px;color:var(--orange);margin-bottom:10px}
+/* FICHE PERSONNALISÉE TRANSPARENTE */
+.product-card{position:relative;background:rgba(255,255,255,.92);backdrop-filter:blur(8px)}
+.product-top{background:var(--orange);color:#fff;padding:7px 12px;font-size:11px;font-weight:700;display:flex;justify-content:space-between}
+.product-image{height:185px;background:#f1f5f9;overflow:hidden}.product-image img{width:100%;height:100%;object-fit:cover}
+.product-body{padding:15px}.product-body h3{font-size:15px;line-height:1.4}
+.p-voiture{font-size:12px;font-weight:700;color:#111827;margin:6px 0 2px}.p-compat{font-size:11px;color:var(--muted)}.p-info{font-size:11px;margin:5px 0;line-height:1.6}
+.price{color:var(--orange);font-size:19px;font-weight:900}.old-price{font-size:11px;color:var(--muted);text-decoration:line-through;margin-left:5px}
+.product-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.product-actions button{flex:1;min-width:75px}
+.discount{position:absolute;top:38px;left:10px;background:#111827;color:#fff;border-radius:6px;padding:4px 8px;font-size:11px;font-weight:700}
+.page{display:none;min-height:65vh}.page.active{display:block}
+.page-banner{background:var(--dark);color:#fff;padding:45px 0}.page-banner h1{font-size:32px;font-weight:900}.page-banner p{color:#d1d5db;font-size:13px;margin-top:5px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:25px}
+.field{width:100%;padding:12px;border:1px solid var(--border);border-radius:9px;background:#fff;outline:none;font-size:13px}
+.search-box{flex:2;min-width:220px;position:relative}.search-box i{position:absolute;left:13px;top:14px;color:var(--muted)}.search-box input{padding-left:39px}.toolbar select{flex:1;min-width:160px}
+.filter-buttons{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:20px}.filter-btn{padding:8px 12px;border-radius:30px;border:1px solid var(--border);background:#fff;font-size:11px}.filter-btn.active{background:var(--orange);color:#fff;border-color:var(--orange)}
+.detail-layout{display:grid;grid-template-columns:1fr 1fr;gap:35px}.detail-image{height:400px;background:#eee;border-radius:16px;overflow:hidden}.detail-image img{width:100%;height:100%;object-fit:cover}
+.detail-info h1{font-size:28px}.detail-info p{font-size:13px;color:var(--muted);margin:13px 0}.detail-price{font-size:28px;color:var(--orange);font-weight:900}
+.form-card{background:#fff;border:1px solid var(--border);padding:25px;border-radius:16px;box-shadow:var(--shadow)}.form-group{margin-bottom:15px}.form-group label{font-size:12px;font-weight:700;display:block;margin-bottom:6px}.form-group input,.form-group select{width:100%}
+.cart-row{display:flex;align-items:center;gap:14px;padding:15px 0;border-bottom:1px solid var(--border)}.cart-row img{width:75px;height:75px;object-fit:cover;border-radius:9px}.cart-row-info{flex:1}.cart-row-info h3{font-size:13px}.cart-row-info p{font-size:12px;color:var(--orange);font-weight:700}
+.qty{display:flex;align-items:center;gap:9px}.qty button{width:29px;height:29px;border:1px solid var(--border);border-radius:7px;background:var(--light)}
+.summary{background:#fff;padding:20px;border-radius:14px;border:1px solid var(--border)}.summary-line{display:flex;justify-content:space-between;font-size:13px;padding:7px 0}.summary-total{font-weight:900;font-size:20px;color:var(--orange);border-top:1px solid var(--border);margin-top:10px;padding-top:14px}
+.review-card{padding:20px}.review-card p{font-size:12px;color:var(--muted)}.review-stars{color:#f59e0b;margin:7px 0}
+.info-card{padding:22px}.info-card i{font-size:25px;color:var(--orange);margin-bottom:12px}.info-card h3{font-size:15px}.info-card p{font-size:12px;color:var(--muted);margin-top:7px}
+.notice{background:#fff7ed;color:#9a3412;border-left:4px solid var(--orange);padding:14px;border-radius:8px;font-size:12px;margin:15px 0}
+footer{background:#111827;color:#fff;padding:48px 0 20px}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:25px}footer h3{font-size:14px;margin-bottom:14px;color:var(--yellow)}footer p,footer a{font-size:11px;color:#cbd5e1;display:block;margin:7px 0}.footer-bottom{border-top:1px solid #374151;margin-top:30px;padding-top:18px;text-align:center;font-size:11px;color:#9ca3af}
+.floating-wa{position:fixed;right:18px;bottom:22px;width:55px;height:55px;border-radius:50%;background:#16a34a;color:#fff;display:grid;place-items:center;font-size:27px;z-index:200}
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#166534;color:#fff;padding:11px 20px;border-radius:9px;font-size:12px;z-index:500;opacity:0;transition:.3s}.toast.show{opacity:1}
+@media(max-width:1000px){nav{display:none}.grid-4{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){body{padding-bottom:65px}.mobile-nav{position:fixed;bottom:0;left:0;width:100%;height:65px;display:flex;justify-content:space-around;align-items:center;background:#fff;border-top:1px solid var(--border);z-index:150}.mobile-nav button{background:transparent;border:0;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:3px;font-size:9px}.mobile-nav button i{font-size:18px}.mobile-nav button.active{color:var(--orange)}.grid-3{grid-template-columns:repeat(2,1fr);gap:10px}.grid-2{grid-template-columns:1fr}.product-image{height:140px}.detail-layout{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="container"><span><i class="fa-solid fa-location-dot"></i> Adjamé, Abidjan</span><span><i class="fa-solid fa-phone"></i> 55 06 16 53 | Lun-Sam 08h-19h</span></div></div>
+<header><div class="container header-inner">
+<a href="#" class="logo" onclick="go('accueil');return false"><span class="logo-icon"><i class="fa-solid fa-car"></i></span><span>PIÈCES AUTO KOUASSI<small>ADJAMÉ • ABIDJAN</small></span></a>
+<nav><button onclick="go('accueil')">Accueil</button><button onclick="go('catalogue')">Catalogue</button><button onclick="go('contact')">Contact</button></nav>
+<div class="header-actions"><button class="icon-btn" onclick="go('panier')"><i class="fa-solid fa-cart-shopping"></i><span class="cart-count" id="cartCount">0</span></button></div>
+</div></header>
+<main>
+<section id="accueil" class="page active">
+<div class="hero"><div class="container"><div class="eyebrow">VOTRE PIÈCES AUTO À ADJAMÉ • VÉRIFIÉ</div>
+<h1>Pièces Auto à Adjamé - Pour Votre Voiture, Pas Générique</h1>
+<p>Chaque pièce est vérifiée pour votre voiture : Toyota, Hyundai, Kia, Renault, Peugeot. Dites-nous votre modèle, on vous confirme.</p>
+<div class="hero-buttons"><button class="btn btn-primary" onclick="go('catalogue')">Voir les Pièces</button><button class="btn btn-green" onclick="wa('Bonjour, je veux commander chez Pièces Auto Kouassi - Adjamé.')">Commander WhatsApp</button><button class="btn btn-yellow" onclick="go('devis')">Demander un Devis</button></div>
+<div class="hero-note">Livraison tout Abidjan • Pièce vérifiée à Adjamé avant vente</div></div></div>
+<div class="section-sm"><div class="container grid grid-4">
+<div class="benefit"><i class="fa-solid fa-circle-check"></i><h3>Kouassi Vérifié</h3><p>Pièce testée avant vente.</p></div>
+<div class="benefit"><i class="fa-solid fa-shield-halved"></i><h3>Garantie Kouassi</h3><p>Garantie écrite sur chaque fiche.</p></div>
+<div class="benefit"><i class="fa-solid fa-car"></i><h3>Pour Votre Voiture</h3><p>Compatibilité affichée sur la fiche.</p></div>
+<div class="benefit"><i class="fa-solid fa-truck-fast"></i><h3>Livraison Rapide</h3><p>Adjamé, Cocody, Yopougon, Plateau.</p></div></div></div>
+<div class="section"><div class="container"><div class="section-title"><span>Fiches personnalisées</span><h2>Pièces vedettes</h2></div><div class="grid grid-3" id="featuredProducts"></div><div style="text-align:center;margin-top:25px"><button class="btn btn-primary" onclick="go('catalogue')">Voir les 12 pièces</button></div></div></div>
+<div class="section" style="background:#fff"><div class="container"><div class="section-title"><span>Nos rayons</span><h2>Nos 6 catégories</h2></div><div class="grid grid-3">
+<div class="category-card" onclick="setCatAndGo('Freinage')"><i class="fa-solid fa-circle-stop"></i><h3>Freinage</h3></div>
+<div class="category-card" onclick="setCatAndGo('Moteur')"><i class="fa-solid fa-gears"></i><h3>Moteur</h3></div>
+<div class="category-card" onclick="setCatAndGo('Suspension')"><i class="fa-solid fa-car-side"></i><h3>Suspension</h3></div>
+<div class="category-card" onclick="setCatAndGo('Batterie')"><i class="fa-solid fa-car-battery"></i><h3>Batterie</h3></div>
+<div class="category-card" onclick="setCatAndGo('Filtre')"><i class="fa-solid fa-filter"></i><h3>Filtres</h3></div>
+<div class="category-card" onclick="setCatAndGo('Entretien')"><i class="fa-solid fa-oil-can"></i><h3>Entretien</h3></div></div></div></div>
+</section>
+<section id="catalogue" class="page"><div class="page-banner"><div class="container"><h1>Catalogue complet</h1><p>Chaque fiche = 1 voiture, 1 code, 1 garantie, 1 prix Adjamé.</p></div></div>
+<div class="section"><div class="container"><div class="toolbar"><div class="search-box"><i class="fa-solid fa-search"></i><input id="searchInput" class="field" placeholder="Rechercher Corolla, Accent, batterie..." oninput="renderCatalog()"></div><select id="brandFilter" class="field" onchange="renderCatalog()"><option value="">Toutes marques</option><option>Toyota</option><option>Hyundai</option><option>Kia</option><option>Renault</option><option>Peugeot</option><option>Universel</option></select></div>
+<div class="filter-buttons"><button class="filter-btn active" onclick="setCategory('Tous',this)">Tous</button><button class="filter-btn" onclick="setCategory('Freinage',this)">Freinage</button><button class="filter-btn" onclick="setCategory('Moteur',this)">Moteur</button><button class="filter-btn" onclick="setCategory('Suspension',this)">Suspension</button><button class="filter-btn" onclick="setCategory('Batterie',this)">Batterie</button><button class="filter-btn" onclick="setCategory('Filtre',this)">Filtre</button><button class="filter-btn" onclick="setCategory('Entretien',this)">Entretien</button></div>
+<p id="catalogCount" style="font-size:12px;color:var(--muted);margin-bottom:15px"></p><div class="grid grid-3" id="catalogGrid"></div></div></div></section>
+<section id="detail" class="page"><div class="section"><div class="container" id="detailContent"></div></div></section>
+<section id="panier" class="page"><div class="page-banner"><div class="container"><h1>Votre Panier</h1></div></div><div class="section"><div class="container grid grid-2"><div id="cartItems"></div><div><div class="summary"><div class="summary-line"><span>Sous-total</span><span id="subTotal">0 FCFA</span></div><div class="summary-line"><span>Livraison</span><span>À discuter</span></div><div class="summary-line summary-total"><span>Total</span><span id="totalPrice">0 FCFA</span></div><br><button class="btn btn-green" style="width:100%" onclick="orderWhatsApp()">Commander sur WhatsApp</button><button class="btn btn-outline" style="width:100%;margin-top:10px" onclick="clearCart()">Vider le panier</button></div></div></div></div></section>
+<section id="devis" class="page"><div class="page-banner"><div class="container"><h1>Demander un Devis</h1><p>Envoyez votre voiture + pièce, on répond avec une fiche personnalisée.</p></div></div><div class="section"><div class="container"><div class="form-card"><div class="form-group"><label>Marque de voiture *</label><input id="dMarque" class="field" placeholder="Ex: Toyota Corolla 2018"></div><div class="form-group"><label>Pièce recherchée *</label><input id="dPiece" class="field" placeholder="Ex: Plaquette de frein avant"></div><div class="form-group"><label>Votre nom</label><input id="dNom" class="field" placeholder="Votre nom"></div><button class="btn btn-green" style="width:100%" onclick="sendDevis()">Envoyer sur WhatsApp</button><div class="notice">On vous répond avec prix + dispo + compatibilité.</div></div></div></div></section>
+<section id="contact" class="page"><div class="page-banner"><div class="container"><h1>Contact</h1><p>Adjamé, Abidjan - Lun-Sam 08h-19h</p></div></div><div class="section"><div class="container grid grid-3"><div class="info-card"><i class="fa-solid fa-phone"></i><h3>Téléphone / WhatsApp</h3><p>55 06 16 53</p><button class="btn btn-green btn-small" onclick="wa('Bonjour Pièces Auto Kouassi')">WhatsApp</button></div><div class="info-card"><i class="fa-solid fa-location-dot"></i><h3>Zone</h3><p>Adjamé, Abidjan. Livraison tout Abidjan.</p></div><div class="info-card"><i class="fa-solid fa-clock"></i><h3>Horaires</h3><p>Lun-Sam : 08h - 19h<br>Dim : Fermé</p></div></div></div></section>
+</main>
+<footer><div class="container"><div class="footer-grid"><div><h3>PIÈCES AUTO KOUASSI</h3><p>Pièces vérifiées à Adjamé, pour votre voiture.</p></div><div><h3>Pages</h3><a href="#" onclick="go('accueil');return false">Accueil</a><a href="#" onclick="go('catalogue');return false">Catalogue</a><a href="#" onclick="go('devis');return false">Devis</a></div><div><h3>Catégories</h3><a href="#" onclick="setCatAndGo('Freinage');return false">Freinage</a><a href="#" onclick="setCatAndGo('Moteur');return false">Moteur</a><a href="#" onclick="setCatAndGo('Batterie');return false">Batterie</a></div><div><h3>Contact</h3><p>Adjamé, Abidjan</p><p>55 06 16 53</p><p>Lun-Sam 08h-19h</p></div></div><div class="footer-bottom">© 2026 Pièces Auto Kouassi - Adjamé, Abidjan.</div></div></footer>
+<div class="mobile-nav"><button onclick="go('accueil')"><i class="fa-solid fa-house"></i>Accueil</button><button onclick="go('catalogue')"><i class="fa-solid fa-store"></i>Catalogue</button><button onclick="go('panier')"><i class="fa-solid fa-cart-shopping"></i>Panier</button><button onclick="go('contact')"><i class="fa-solid fa-phone"></i>Contact</button></div>
+<a class="floating-wa" href="#" onclick="wa('Bonjour Pièces Auto Kouassi');return false"><i class="fa-brands fa-whatsapp"></i></a>
+<div class="toast" id="toast">Ajouté au panier</div>
+<script>
+// ===== ICI TU MODIFIES SEULEMENT ICI - FICHES PERSONNALISÉES =====
+// Change : code, nom, voiture, compat, prix, garantie, dispo, livraison, img
+const produits = [
+{id:1, code:"KOU-001", nom:"Plaquette de frein avant", voiture:"Toyota Corolla 2018", compat:"Corolla 2015-2022", prix:15000, old:19000, marque:"Toyota", categorie:"Freinage", stock:12, garantie:"3 mois", dispo:"En stock à Adjamé", livraison:"Cocody • Yopougon", img:"https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80", desc:"Pièce neuve, vérifiée à Adjamé avant vente. Freinage puissant."},
+{id:2, code:"KOU-002", nom:"Disque de frein avant", voiture:"Hyundai Accent 2019", compat:"Accent 2017-2023", prix:22000, old:28000, marque:"Hyundai", categorie:"Freinage", stock:8, garantie:"3 mois", dispo:"En stock à Adjamé", livraison:"Tout Abidjan", img:"https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=800&q=80", desc:"Disque ventilé, résistant chaleur."},
+{id:3, code:"KOU-003", nom:"Bougie NGK", voiture:"Toyota Yaris 2017", compat:"Yaris / Corolla", prix:3500, old:4500, marque:"Universel", categorie:"Moteur", stock:50, garantie:"1 mois", dispo:"En stock à Adjamé", livraison:"Adjamé • Cocody", img:"https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=800&q=80", desc:"Démarrage facile, économie carburant."},
+{id:4, code:"KOU-004", nom:"Filtre à huile", voiture:"Kia Rio 2019", compat:"Rio / Hyundai i20", prix:5000, old:0, marque:"Kia", categorie:"Filtre", stock:20, garantie:"1 mois", dispo:"En stock à Adjamé", livraison:"Tout Abidjan", img:"https://images.unsplash.com/photo-1632731354483-1f1a7f8c5a2e?w=800&q=80", desc:"Filtre original, protège moteur."},
+{id:5, code:"KOU-005", nom:"Filtre à air", voiture:"Renault Duster 2020", compat:"Duster 2018-2023", prix:8000, old:10000, marque:"Renault", categorie:"Filtre", stock:15, garantie:"1 mois", dispo:"En stock à Adjamé", livraison:"Cocody • Yopougon", img:"https://images.unsplash.com/photo-1486262715619-67b85e0b08d3
